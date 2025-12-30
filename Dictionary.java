@@ -22,9 +22,27 @@ public class Dictionary {
             System.out.println(" please fill out both word and definition. ");
             return;
         }
-
+        else{
         data.put(word, def);
         System.out.println(" data added successfully! ");
+        }
+    }
+
+    public void deleteWord(String word){
+        if(word==null){
+            System.out.println("Please enter a word to delete! ");
+            return;
+        }
+        else{
+            if (data.containsKey(word)) {
+                data.remove(word);
+                System.out.println("data removed successfully");
+                
+            }
+            else{
+                System.out.println("data not found try again");
+            }
+        }
     }
 
     public static void main(String[] args) {
