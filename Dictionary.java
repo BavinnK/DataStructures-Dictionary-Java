@@ -118,6 +118,7 @@ public class Dictionary {
             System.out.println("5. Exit");
             System.out.print("Choose an option: ");
             int op=input.nextInt();
+            input.nextLine();
             System.out.println("----------------------------------");
 
             if(op==1){
@@ -127,7 +128,42 @@ public class Dictionary {
                 int po=input.nextInt();
                 dict.searchWord(po, lett);
             }
-            else if(op==2){}
+            else if(op==2){
+                System.out.println("enter the word to add ");
+                String add=input.nextLine();
+                System.out.println("enter a definition of the word ");
+                String def=input.nextLine();
+                dict.addWord(add, def);
+
+            }
+            else if(op==3){
+                System.out.println("enter the word to delete ");
+                String delWord=input.nextLine();
+                System.out.println("are sure you want to delete ["+delWord+"] ? (Y/N) ");
+                String val=input.nextLine();
+                
+                if (val.equalsIgnoreCase("y")) {
+                   dict.deleteWord(delWord); 
+                }
+                else{
+                    continue;
+                }
+            }
+            else if(op==4){
+                System.out.println("all words: ");
+                
+                for(String searchAll: dict.data.keySet()){
+                    System.out.println(searchAll);
+                }
+            }
+            else if(op==5){
+                System.out.println("Good bye :) ");
+                break;
+            }
+            else{
+                System.out.println("please enter 1 to 5 ");
+            }
+
         }
         
     }
