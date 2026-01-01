@@ -108,7 +108,27 @@ public class Dictionary {
         dict.addWord("mobile", "you use it everyday");
         dict.addWord("Lion", "king of the forest");
 
-        
+        while (true) {
+            System.out.println("----------------------------------");
+            System.out.println("\n--- DICTIONARY MENU ---");
+            System.out.println("1. Search for a Word");
+            System.out.println("2. Add a New Word");
+            System.out.println("3. Delete a Word");
+            System.out.println("4. View All Words");
+            System.out.println("5. Exit");
+            System.out.print("Choose an option: ");
+            int op=input.nextInt();
+            System.out.println("----------------------------------");
+
+            if(op==1){
+                System.out.println("enter a letter too search: ");
+                String lett=input.nextLine();
+                System.out.println("position of the search 1:Start, 2:Middle, 3:End ");
+                int po=input.nextInt();
+                dict.searchWord(po, lett);
+            }
+            else if(op==2){}
+        }
         
     }
 }
