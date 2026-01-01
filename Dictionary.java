@@ -69,6 +69,18 @@ public class Dictionary {
             else if(pos==2){//in the middle of the word
 
                 if(word.contains(lett)&&(!word.startsWith(lett))&&(!word.endsWith(lett))){
+                    /*
+                    * whats happening in that if condition which is "word.contains(lett)&&(!word.startsWith(lett))&&(!word.endsWith(lett))"
+                    * first we wanna search in the middle of the word by what by contains function,
+                    * but contains func is also gonna searhc the start and, also the end, so we have to
+                    * isolate the middle part how ???? by that beautiful condition that gor from internet.
+                    * how does it work: 
+                    * first we use conatins func lets say we wanna find letter L in the middle when we do
+                    * contains(L) this will return true good,
+                    * then we do the startWith func again this part should return false when it returns false the ! operator makes it true again good
+                    * then the endsWith func for L again its gonna return false and ! makes it true so when everything is true the condition
+                    * is gonna be true then we found our matching word.
+                     */
                     isMatch=true;
                 }
 
